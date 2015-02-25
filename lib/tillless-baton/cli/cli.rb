@@ -12,9 +12,11 @@ module Baton
     option :in,  desc: 'where to read merchant configuration from, defaults to stdin'
     option :out, desc: 'where to write output report data to, defaults to stdout'
     long_desc <<-LONGDESC
-    Execute a deployment of a Tillless Merchant configuration. A merchant configuration file (as JSON) must be
-    provided via --config which baton will parse, orchestrate, and then return a report (as JSON) of what was
-    performed.
+    Execute a deployment of a Tillless Merchant configuration.
+
+    A merchant configuration file (as JSON) must be provided which baton will parse, orchestrate, and then return a report (as JSON) of what was performed.
+
+    
     LONGDESC
     def deploy
       @in  = options[:in]  || STDIN
@@ -55,9 +57,11 @@ module Baton
 
     end
 
-    def log(msg)
-      if options[:verbose]
-        print msg
+    no_commands do
+      def log(msg)
+        if options[:verbose]
+          print msg
+        end
       end
     end
   end
