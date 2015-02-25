@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'erb'
+require 'optparse'
+require 'rubygems'
+require 'tillless-baton/cli/cli'
+
+Baton::CommandLine.start(ARGV)
