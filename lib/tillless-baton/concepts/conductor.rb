@@ -4,7 +4,7 @@ require 'tillless-baton/version'
 require 'tillless-baton/concepts/merchant_config'
 
 module Baton
-  class Orchestrator
+  class Conductor
     attr_accessor :config
 
     def initialize(config)

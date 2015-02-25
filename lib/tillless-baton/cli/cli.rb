@@ -2,7 +2,7 @@ require 'json'
 require 'thor'
 require 'tillless-baton/version'
 require 'tillless-baton/concepts/parser'
-require 'tillless-baton/concepts/orchestrator'
+require 'tillless-baton/concepts/conductor'
 
 module Baton
   class CommandLine < Thor
@@ -41,7 +41,7 @@ module Baton
 
       # Parse JSON into a configuration object
       log "Orchestrating: ... "
-      output = Baton::Orchestrator.new(config).orchestrate
+      output = Baton::Conductor.new(config).orchestrate
       log "Done\n"
 
       # Dump output to STDOUT or specified file
